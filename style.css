@@ -1,0 +1,219 @@
+:root {
+    /* -- COULEURS -- */
+    --primary-color: #3A7D44; 
+    --hover-color: #25522c;   
+    --bg-color: #FAFAF9;      
+    --bg-alt: #EDF1EE;        
+    --text-color: #333333;    
+    --text-light: #666666;    
+    --border-color: #DDDDDD;
+    --spacing-std: 1rem;
+    --spacing-lg: 3rem;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px; 
+    margin: 0 auto;
+    padding: 0 var(--spacing-std);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    color: var(--hover-color);
+    text-decoration: underline;
+}
+
+/* =========================================
+   3. HEADER (Menu)
+   ========================================= */
+.site-header {
+    background: #FFFFFF; /* On garde le menu blanc pour la clarté */
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02); /* Ombre ultra légère */
+}
+
+.flex-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-list a {
+    color: var(--text-color);
+}
+
+.nav-list a:hover {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* =========================================
+   4. SECTIONS & TITRES
+   ========================================= */
+section {
+    padding: var(--spacing-lg) 0;
+}
+
+.section-pale {
+    background-color: var(--bg-alt); /* Fond alterné doux */
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+h1, h2, h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Introduction (Hero) */
+.hero {
+    text-align: center;
+    padding: 5rem 1rem;
+    background-color: var(--bg-color);
+}
+
+.lead {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+/* Boutons "Eco" */
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff !important; /* Force le blanc */
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none !important;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--hover-color);
+}
+
+/* =========================================
+   5. GRILLES (Services & Objectifs)
+   ========================================= */
+.objectives-grid, .services-grid {
+    display: grid;
+    /* Magie CSS : Colonnes auto-adaptables sans Media Queries */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.card, .objectives-grid li {
+    background: #FFFFFF; /* Cartes blanches sur fond beige/gris */
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    list-style: none;
+    text-align: center;
+}
+
+.card img {
+    margin-bottom: 1rem;
+    height: 180px;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* =========================================
+   6. CONTACT & PIED DE PAGE
+   ========================================= */
+.contact-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.contact-info, .map-container {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Cadre autour de la "fausse" carte */
+.map-container img {
+    border: 1px solid var(--border-color);
+}
+
+.site-footer {
+    text-align: center;
+    padding: 2rem 0;
+    background: var(--primary-color); /* Footer vert */
+    color: #fff;
+    font-size: 0.9rem;
+    margin-top: 3rem;
+}
+
+.site-footer p {
+    opacity: 0.9;
+}
+
+/* =========================================
+   7. PETIT MOBILE
+   ========================================= */
+@media (max-width: 700px) {
+    .nav-list {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        margin-top: 1rem;
+        gap: 0.5rem;
+    }
+}
